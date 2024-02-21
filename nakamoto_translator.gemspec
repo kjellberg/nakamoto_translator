@@ -1,10 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "lib/nakamoto_translator/version"
-
 Gem::Specification.new do |spec|
   spec.name = "nakamoto_translator"
-  spec.version = NakamotoTranslator::VERSION
+  spec.version = "0.0.1"
   spec.authors = ["Rasmus Kjellberg"]
   spec.email = ["2277443+kjellberg@users.noreply.github.com"]
 
@@ -18,7 +16,6 @@ Gem::Specification.new do |spec|
 
   spec.metadata["homepage_uri"] = spec.homepage
   spec.metadata["source_code_uri"] = "https://github.com/kjellberg/nakamoto_translator"
-  spec.metadata["changelog_uri"] = "https://github.com/kjellberg/nakamoto_translator"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
