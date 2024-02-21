@@ -1,39 +1,36 @@
-# NakamotoTranslator
+# Nakamoto Translator
 
-TODO: Delete this and the text below, and describe your gem
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/nakamoto_translator`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-## Installation
-
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
-
-Install the gem and add to the application's Gemfile by executing:
-
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
-
-If bundler is not being used to manage dependencies, install the gem by executing:
-
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+The Nakamoto Translator is a Ruby module for converting Latin characters into a custom set of Japanese characters and vice versa. It can playfully reinterpret names like "Hal Finney" into a set of characters that are not intended to represent their actual Japanese translation, but rather a creative representation when read as if they were Latin letters.
 
 ## Usage
+The module provides four main functions:
 
-TODO: Write usage instructions here
+```#from_latin_to_nakamoto(original_string):```
+Converts a string from Latin characters to the Nakamoto character set. For example, "hal finey" becomes "サトし なカモと".
 
-## Development
+```#from_nakamoto_to_latin(original_string):```
+Converts a string from the Nakamoto character set to lowercase Latin characters. For example, "サトし なカモと" becomes "hal finey".
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+```#from_nakamoto_to_japanese(nakamoto_string):```
+Interprets a string from the Nakamoto character set as if it were actual Japanese characters, translating it to Latin characters. For example, "サトし なカモと" becomes "satoshi nakamoto".
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```#from_japanese_to_nakamoto(japanese_string):```
+Converts Japanese text to the Nakamoto character set. For example, "satoshi nakamoto" becomes "サトし なカモと".
 
-## Contributing
+## Examples
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/nakamoto_translator. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/nakamoto_translator/blob/main/CODE_OF_CONDUCT.md).
+```ruby
+require 'nakamoto_translator'
 
-## License
+NakamotoTranslator.from_latin_to_nakamoto("hal finey")
+=> "サトし なカモと"
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+NakamotoTranslator.from_nakamoto_to_japanese("サトし なカモと")
+=> "satoshi nakamoto"
 
-## Code of Conduct
+NakamotoTranslator.from_japanese_to_nakamoto("satoshi nakamoto")
+=> "サトし なカモと"
 
-Everyone interacting in the NakamotoTranslator project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/nakamoto_translator/blob/main/CODE_OF_CONDUCT.md).
+NakamotoTranslator.from_nakamoto_to_latin("サトし なカモと")
+=> "hal finey"
+```
