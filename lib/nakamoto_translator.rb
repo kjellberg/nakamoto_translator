@@ -68,4 +68,12 @@ module NakamotoTranslator
     end
     string
   end
+
+  def from_japanese_to_nakamoto(japanese_string)
+    string = japanese_string.dup
+    HIRAGANA_KATAKANA.each do |character, latin|
+      string.gsub!(latin, character)
+    end
+    string
+  end
 end
