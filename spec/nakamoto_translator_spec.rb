@@ -6,6 +6,6 @@ RSpec.describe NakamotoTranslator do
   end
 
   it "does something useful" do
-    expect(false).to eq(true)
+    expect(NakamotoTranslator.encode("hal finey")).to eq("satoshi nakamoto")
   end
 end

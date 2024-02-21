@@ -4,5 +4,10 @@ require_relative "nakamoto_translator/version"
 
 module NakamotoTranslator
   class Error < StandardError; end
-  # Your code goes here...
+  
+  autoload :Encoder, "nakamoto_translator/encoder"
+
+  def self.encode(string)
+    Encoder.new(string).call
+  end
 end
